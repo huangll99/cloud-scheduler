@@ -14,7 +14,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.4.RELEASE</version>
+		<version>2.0.8.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -84,8 +84,41 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>1.0.2</version>
+				<configuration>
+					<from>
+						<image>java:8-jre</image>
+					</from>
+					<to>
+						<image>${project.artifactId}:${project.version}</image>
+					</to>
+					<container>
+						<jvmFlags>
+							<jvmFlag>-Xms512m</jvmFlag>
+							<jvmFlag>-Dspring.profiles.active=prod</jvmFlag>
+						</jvmFlags>
+						<environment>
+							<spring.profiles.active>prod</spring.profiles.active>
+							<TZ>Asia/Shanghai</TZ>
+						</environment>
+						<mainClass>com.gsafety.scheduler.SchedulerApplication</mainClass>
+						<format>OCI</format>
+						<useCurrentTimestamp>true</useCurrentTimestamp>
+					</container>
+					<allowInsecureRegistries>true</allowInsecureRegistries>
+				</configuration>
+				<!--                <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>dockerBuild</goal>
+                                </goals>
+                            </execution>
+                        </executions>-->
+			</plugin>
 		</plugins>
 	</build>
-
-
 </project>
