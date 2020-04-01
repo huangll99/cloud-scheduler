@@ -1,0 +1,18 @@
+stages:
+- name: compile
+  steps:
+  - runScriptConfig:
+      image: maven:3-jdk-8
+      shellScript: mvn clean package
+- name: build
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: cloud-scheduler:v1
+- name: deploy
+  steps:
+  - applyYamlConfig:
+      path: ./deployment.yaml
+timeout: 60
+notification: {}
