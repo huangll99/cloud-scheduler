@@ -4,6 +4,9 @@ metadata:
   name: cloud-scheduler-deployment
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: cloud-scheduler
   template:
     metadata:
       labels:
