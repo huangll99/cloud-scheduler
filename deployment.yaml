@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: cloud-scheduler
-          image: cloud-scheduler:v1
+          image: docker-registry.p-hjckx-pipeline/cloud-scheduler:v1
           ports:
             - containerPort: 8080
 
