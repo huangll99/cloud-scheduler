@@ -18,5 +18,7 @@ stages:
   steps:
   - applyYamlConfig:
       path: ./deployment.yaml
+    env:
+      tag: "123"
 timeout: 60
 notification: {}
