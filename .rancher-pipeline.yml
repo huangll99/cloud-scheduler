@@ -12,6 +12,8 @@ stages:
       tag: 10.3.10.131:5000/cloud-scheduler:v1
       pushRemote: true
       registry: 10.3.10.131:5000
+    env:
+      PLUGIN_INSECURE: "true"
 - name: deploy
   steps:
   - applyYamlConfig:
