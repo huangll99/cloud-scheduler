@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Author: huangll
+ * @author huangll
  * Written on 2018/8/31.
  */
 @Getter
