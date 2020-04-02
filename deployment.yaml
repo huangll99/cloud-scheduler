@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: cloud-scheduler
-          image: ${CICD_IMAGE}:${CICD_EXECUTION_SEQUENCE}
+          image: 10.3.10.131:5000/cloud-scheduler:v1
           ports:
             - containerPort: 8080
 
