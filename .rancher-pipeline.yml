@@ -9,9 +9,9 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: cloud-scheduler:v1
+      tag: 10.3.10.131:5000/cloud-scheduler:v1
       pushRemote: true
-      registry: 127.0.0.1:34629
+      registry: 10.3.10.131:5000
 - name: deploy
   steps:
   - applyYamlConfig:
