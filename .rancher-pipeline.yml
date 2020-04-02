@@ -10,6 +10,7 @@ stages:
       dockerfilePath: ./Dockerfile
       buildContext: .
       tag: cloud-scheduler:v1
+      pushRemote: true
       registry: 127.0.0.1:34629
 - name: deploy
   steps:
